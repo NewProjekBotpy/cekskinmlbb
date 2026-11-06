@@ -1,0 +1,9 @@
+{
+  "name": "mlbb-account-checker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple MLBB account checker starter for Vercel",
+  "engines": {
+    "node": ">=20"
+  }
+}

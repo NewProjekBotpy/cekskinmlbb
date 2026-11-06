@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131b">
+  <meta name="description" content="MLBB Account Checker - ringkasan hero dan skin Mobile Legends.">
+  <title>MLBB Account Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="MLBB Checker home">
+        <span class="brand-mark">M</span>
+        <span>MLBB<span class="brand-muted">CHECKER</span></span>
+      </a>
+      <span class="top-note"><i></i> ACCOUNT LOOKUP</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">MOBILE LEGENDS · ACCOUNT TOOLS</div>
+      <h1>Periksa koleksi<br><span>akun MLBB.</span></h1>
+      <p class="intro">Masukkan Game ID untuk melihat ringkasan hero dan skin yang terdeteksi.</p>
+
+      <form id="lookup-form" class="lookup-card">
+        <label for="game-id">GAME ID</label>
+        <div class="input-row">
+          <input id="game-id" name="gameId" type="text" inputmode="numeric" autocomplete="off"
+                 placeholder="Contoh: 123456789" maxlength="24" required>
+          <button id="check-button" type="submit">
+            <span id="button-label">Cek akun</span>
+            <span id="button-spinner" class="spinner" hidden></span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <div class="form-foot">
+          <span>Masukkan Game ID saja</span>
+          <button id="demo-button" class="demo-link" type="button">Lihat contoh hasil</button>
+        </div>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section id="result" class="result" hidden>
+      <div class="result-head">
+        <div>
+          <div class="eyebrow">ACCOUNT OVERVIEW</div>
+          <h2 id="nickname">—</h2>
+          <p id="account-id" class="muted">Game ID —</p>
+        </div>
+        <span id="result-badge" class="result-badge">HASIL</span>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-label">TOTAL HERO</span>
+          <strong id="hero-count">—</strong>
+          <span class="stat-hint">Hero unik terdeteksi</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">TOTAL SKIN</span>
+          <strong id="skin-count">—</strong>
+          <span class="stat-hint">Skin dalam koleksi</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">BATTLE STATS</span>
+          <strong id="battle-count">—</strong>
+          <span class="stat-hint">Ringkasan tersedia</span>
+        </article>
+      </div>
+
+      <div class="skins-panel">
+        <div class="panel-head">
+          <div>
+            <div class="eyebrow">COLLECTION</div>
+            <h3>Daftar skin</h3>
+          </div>
+          <span id="skin-caption" class="muted">0 skin</span>
+        </div>
+        <div id="skin-list" class="skin-list"></div>
+        <button id="show-more" class="show-more" type="button" hidden> Tampilkan lebih banyak </button>
+      </div>
+    </section>
+
+    <footer>
+      <span>MLBB Account Checker</span>
+      <span>Data ditampilkan sesuai respons sumber API.</span>
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
